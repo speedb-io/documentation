@@ -1,11 +1,14 @@
-# About
 
-Speedb is a library that provides persistent key-value store.
+<p align="center">
+  
+![speedb-animated-logo](https://user-images.githubusercontent.com/107058910/206215033-75c2f328-5ddd-40dd-b888-e5bc07d4018f.gif)"
 
-Keys and values are arbitrary byte arrays. The keys are ordered within the key-value store according to a user-specified comparator function.\
-\
-This open-source project, which is maintained by Speedb, is forked from RocksDB, which was developed by Facebook.
+</p>
 
-Speedb features several important and ongoing improvements, which will be documented as they are released.
+# Speedb Documentation 
 
-The Speedb community is open to developers around the world who want to contribute to this project, including code, documentation, and helping to find and report issues.
+Welcome to Speedb Documentation repository!
+
+Using this project, you can contribute to the Speedb documentation, which availabe [here](https://speedb.gitbook.io/documentation/)
+
+You can contribute by enhancing, fixing issues, and adding new content using issues and pull requests.
