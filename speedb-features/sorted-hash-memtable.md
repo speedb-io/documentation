@@ -18,7 +18,7 @@ The goal of the sorted vector is to improve seek operations, taking into conside
 
 A new write is added to the hash and atomic write list.
 
-### Write operation
+### Write Operation
 
 #### **Hash insertion:**
 
@@ -37,11 +37,11 @@ In the background, the sorted thread divides the write list into sorted vectors 
 
 The vector will only be valid if it is sorted.
 
-#### Read operation:
+### Read Operation:
 
 Read is done by direct access to the match memtable hash bucket. No synchronized lock is required.
 
-#### Seek operation:
+### Seek Operation:
 
 The seek request signals the sorted thread to divide a new sorted vector by adding a special entry to the write list.&#x20;
 
@@ -77,7 +77,7 @@ As mentioned above, the creation of this memtable is expensive. As such, we've c
 1. The memtable constructor size is about 8mg (depends on the bucket size)&#x20;
 2. memtable creation is expensive (creating 1000000 buckets takes time)
 
-### Performance results&#x20;
+### Performance Results&#x20;
 
 The new sorted hash memtable was tested with db\_bench, using the configuration below.&#x20;
 
