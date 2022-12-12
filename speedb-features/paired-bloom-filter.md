@@ -2,6 +2,8 @@
 
 The Paired Bloom Filter consumes less memory than FastLocalBloomFilterPolicy, RockDB’s default cache-local bloom filter, without increasing the rate of false positives.
 
+The Paired Bloom filter algorithm introduced in Speedb release 2.1.0.&#x20;
+
 ## Overview
 
 ### **RocksDB’s default bloom filter**
