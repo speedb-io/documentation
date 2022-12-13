@@ -1,6 +1,6 @@
 # Speedb Communication Channels
 
-### Speedb official website:
+### Speedb Official Website:
 
 [https://www.speedb.dev/](https://www.speedb.dev/)
 
