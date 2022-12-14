@@ -1,16 +1,16 @@
-# Speedb Communication Channels
+# Speedb communication channels
 
-### Speedb Official Website:
+### Speedb official website:
 
 [https://www.speedb.dev/](https://www.speedb.dev/)
 
-### Discord Channel&#x20;
+### Discord channel&#x20;
 
-For live discussion with the community you can use our official [Discord channel](https://discord.gg/5fVUUtM2cG).
+For live discussions with the community, use our official [Discord channel](https://discord.gg/5fVUUtM2cG).
 
-### Technical Forum
+### Technical forum
 
-For technical questions and discussions you can use our official [Discourse forum](https://forum.speedb.dev/).
+For technical questions and discussions, use our official [Discourse forum](https://forum.speedb.dev/).
 
 ### Reporting bugs
 

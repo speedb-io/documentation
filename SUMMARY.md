@@ -1,9 +1,9 @@
 # Table of contents
 
 * [About](README.md)
-  * [Speedb Communication Channels](readme/speedb-communication-channels.md)
+  * [Speedb communication channels](readme/speedb-communication-channels.md)
   * [Release cadence](readme/release-cadence.md)
-* [Getting Started](getting-started/README.md)
+* [Getting started](getting-started/README.md)
   * [Install](getting-started/install.md)
   * [How to contribute](getting-started/how-to-contribute/README.md)
     * [Contribute code](getting-started/how-to-contribute/contribute-code.md)
@@ -12,7 +12,7 @@
     * [Add or update documentation](getting-started/how-to-contribute/add-or-update-documentation.md)
     * [Report bugs and other issues](getting-started/how-to-contribute/report-bugs-and-other-issues.md)
     * [Help with new and ongoing feature development](getting-started/how-to-contribute/help-with-new-and-ongoing-feature-development.md)
-* [Speedb Features](speedb-features/README.md)
+* [Speedb features](speedb-features/README.md)
   * [Sorted Hash Memtable](speedb-features/sorted-hash-memtable.md)
   * [Paired Bloom Filter](speedb-features/paired-bloom-filter.md)
 * [Performance testing](performance-testing.md)
