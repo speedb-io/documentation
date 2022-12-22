@@ -23,7 +23,7 @@ Speedb’s goal was to ensure fast and low consumption but _without sacrificing 
 {% hint style="info" %}
 The construction and use of the Paired Bloom Filter is \~2x slower than the default bloom filter. In most use cases the performance degradation will be insignificant. However, this should be reduced in the next version due to optimization and additional improvements.
 
-**We recommend using the Paired Bloom Filter only for a bits per key rate that is larger than 10.**&#x20;
+**With versions older than 2.2.0, we recommend using the Paired Bloom Filter only for bits per key rates greater than 10. As of version 2.2.0 and later, this feature is available with any bits per key value.**&#x20;
 
 The current Paired Bloom Filter is suitable when all files contain a sufficient number of keys. The typical average number of keys per file should be above 50k keys. A lower number of keys will lead to a degradation in performance.
 {% endhint %}
