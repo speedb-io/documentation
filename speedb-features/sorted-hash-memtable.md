@@ -4,7 +4,10 @@
 
 There are currently 5 RocksDB memtable representation options, with the default being _**SkipList**_.&#x20;
 
-We designed a new memtable representation algorithm that allows parallel writes without requiring the insertion of synchronization locks, also improving read and seek operations.
+We designed a new memtable representation algorithm that allows parallel writes without requiring the insertion of synchronization locks, also improving read and seek operations.\
+
+
+This new memtable is available in version 2.0.0 and later.&#x20;
 
 ### Algorithm
 
