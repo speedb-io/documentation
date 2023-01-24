@@ -67,9 +67,9 @@ The new proactive flushing algorithm was tested with db\_bench, using the config
 
 **Test description :**
 
-* Set the write buffer manager with size of 110,000,000
+* Set the write buffer manager with size of 110000000
 * Create 3 databases.
-* Performing fillseq operations on 430,000 keys with a value size of 76B on 2 databases. This has resulted in the memtable becoming mostly full but not enough to require a flush.
+* Performing fillseq operations on 430000 keys with a value size of 76B on 2 databases. This has resulted in the memtable becoming mostly full but not enough to require a flush.
 * Writing 100000000 keys of the same size to the last DB.
 
 **HW configuration:**&#x20;

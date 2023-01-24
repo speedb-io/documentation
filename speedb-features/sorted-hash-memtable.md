@@ -25,7 +25,7 @@ A new write is added to the hash and atomic write list.
 
 #### **Hash insertion:**
 
-Since the default hash size is 1000000 buckets, the possibility of more than 1 write on the same bucket is reduced (not including an overwrite operation). This gives us direct access without synchronization.
+Since the default hash size is 1,000,000 buckets, the possibility of more than 1 write on the same bucket is reduced (not including an overwrite operation). This gives us direct access without synchronization.
 
 #### Write list insertion:
 
@@ -35,7 +35,7 @@ Elements are inserted into the write list atomically (the anchor pointer is an a
 
 In the background, the sorted thread divides the write list into sorted vectors if at least one of the following conditions occurs:
 
-1. The vector size limit is reached (default 10000)&#x20;
+1. The vector size limit is reached (default 10,000)&#x20;
 2. A seek operation occurs
 
 The vector will only be valid if it is sorted.
