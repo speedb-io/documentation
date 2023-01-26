@@ -1,11 +1,13 @@
 # About
 
-![speedb-animated-logo](https://user-images.githubusercontent.com/107058910/206215033-75c2f328-5ddd-40dd-b888-e5bc07d4018f.gif)
+<figure><img src=".gitbook/assets/OSS-logo.svg" alt=""><figcaption></figcaption></figure>
 
-## Speedb documentation
+## Welcome to Speedb's documentation!&#x20;
 
-Welcome to Speedb's documentation repository!
+Speedb is a first-of-its-kind, community-led storage engine designed to support modern data sets. It focuses on high performance, optimized for modern storage hardware and scale, on-premise and in the cloud. We strive to simplify the usability of complex data engines as well as stabilize and improve performance.\
+\
+Speedb docs is managed in the "documentation" repository.&#x20;
 
-Using this project, you can contribute to Speedb's documentation, available [here](https://speedb.gitbook.io/documentation/).
+You can contribute by enhancing, fixing issues, and adding new content, by using issues, and pull requests.
 
-You can contribute by enhancing, fixing issues, and adding new content, user issues, and pull requests.
+\
