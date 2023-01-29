@@ -1,6 +1,6 @@
 # Drop-in Replacement
 
-#### Replace your existing Rocksdb with Speedb
+## Replace your existing Rocksdb with Speedb
 
 1. [Download the package](https://github.com/speedb-io/speedb/releases)
 2. Copy the library along with the include folder to your project

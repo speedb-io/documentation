@@ -9,18 +9,6 @@ The following section covers how to get using Speedb:
 
 ### ****
 
-
-
-
-
-####
-
-
-
-
-
-
-
 Questions? Please feel free to contact us via [GitHub](https://github.com/speedb-io/speedb/discussions) or [Discord](https://discord.gg/52yzKZ5G9D).
 
 {% hint style="info" %}

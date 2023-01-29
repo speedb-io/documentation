@@ -4,13 +4,7 @@ description: This page describes how to clone, compile and use the library.
 
 # How to Compile Speedb
 
-
-
 Check the prerequisites before you start compiling in the [dependencies](dependencies.md) page.&#x20;
-
-
-
-
 
 ### Compile in Release mode
 
