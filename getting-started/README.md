@@ -1,10 +1,10 @@
 # Getting started
 
-The following section covers how to get using Speedb:
+The following section covers hoe to get using Speedb:
 
-* [Speedb example: ](speedb-example.md)the fastest way to get up and running
+* [Speedb example: ](speedb-example.md)the fastest way to get Speedb up and running
 * [How to compile Speedb](how-to-compile-speedb.md)[ from source](how-to-compile-speedb.md)
-* Use prebuilt binaries&#x20;
+* [Use prebuilt binaries ](install.md)
 * [Drop-in replacement for Rocksdb:](drop-in-replacement.md) for existing rocksdb users that would like to start using Speedb with minimum steps&#x20;
 
 ### ****
