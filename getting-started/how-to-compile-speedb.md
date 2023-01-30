@@ -13,7 +13,11 @@ Check the prerequisites before you start compiling in the [dependencies](depende
 
 ### Compile in Debug mode
 
+{% hint style="info" %}
 **Important**: If you plan to run Speedb in production, don't compile using the default `make` or `make all` invocations. This will compile Speedb in debug mode, which is much slower than release mode.
+{% endhint %}
+
+****
 
 * `make check` will compile Speedb in debug mode and run all the unit tests.
 * `make all` will compile Speedb's static library, and all tools and unit tests. These tools depend on gflags, so you'll need to have gflags installed to run `make all`. This will compile Speedb in debug mode. Also, please don't use binaries compiled by `make all` in production.

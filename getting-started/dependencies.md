@@ -1,18 +1,18 @@
 # Dependencies
 
-*   Speedb's library should be able to compile without any dependency installed.
+Speedb's library should be able to compile without any dependency installed.
 
-    Although we recommend installing some compression libraries:
+Although we recommend installing some compression libraries:
 
-    * [zlib](http://www.zlib.net/) - for data compression
-    * [bzip2](http://www.bzip.org/) - for data compression
-    * [lz4](https://github.com/lz4/lz4) - for extremely fast data compression
-    * [snappy](http://google.github.io/snappy/) - for fast data compression
-    * [zstandard](http://www.zstd.net) - for fast real-time compression algorithms
-    * All of our tools depend on [gflags](https://gflags.github.io/gflags/). This is a library that handles command line flag processing. Note that this is only required for building the tools, and that you can compile the Speedb library even if you don't have gflags installed.
-    * `make check` will also check code formatting, which requires [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
-    * To build the RocksJava static target, then CMake is required for building Snappy
-    * If you want to run microbench (e.g, `make microbench`, `make ribbon_bench` or `cmake -DWITH_BENCHMARK=1`), Google benchmark >= 1.6.0 is needed.
+* [zlib](http://www.zlib.net/) - for data compression
+* [bzip2](http://www.bzip.org/) - for data compression
+* [lz4](https://github.com/lz4/lz4) - for extremely fast data compression
+* [snappy](http://google.github.io/snappy/) - for fast data compression
+* [zstandard](http://www.zstd.net) - for fast real-time compression algorithms
+* All of our tools depend on [gflags](https://gflags.github.io/gflags/). This is a library that handles command line flag processing. Note that this is only required for building the tools, and that you can compile the Speedb library even if you don't have gflags installed.
+* `make check` will also check code formatting, which requires [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
+* To build the RocksJava static target, then CMake is required for building Snappy
+* If you want to run microbench (e.g, `make microbench`, `make ribbon_bench` or `cmake -DWITH_BENCHMARK=1`), Google benchmark >= 1.6.0 is needed.
 * [Per Operating System](dependencies.md#supported-platforms)
 
 ## **Prerequisites:**
