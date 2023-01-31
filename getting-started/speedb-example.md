@@ -1,8 +1,11 @@
 # Speedb Example
 
-1. Clone speedb
-2. cd speedb/examples
-3. make speedb\_is\_awesome\_example
+```
+1.$git clone speedb
+2.$cd path/to/speedb/examples
+3.$make speedb_is_awesome_example
+4.$./speedb_is_awesome_example
+```
 
 **Code examples**
 
@@ -29,5 +32,3 @@ std::string value; db->Get(ReadOptions(), "key", &value);
 // close DB 
 db->Close();
 ```
-
-\
