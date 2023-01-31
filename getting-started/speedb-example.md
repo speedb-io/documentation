@@ -1,7 +1,7 @@
 # Speedb Example
 
 ```
-1.$git Clone speedb
+1.$git clone speedb
 2.$cd path/to/speedb/examples
 3.$make speedb_is_awesome_example
 4.$./speedb_is_awesome_example
