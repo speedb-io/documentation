@@ -2,9 +2,11 @@
 
 ```
 1.$git clone speedb
-2.$cd path/to/speedb/examples
-3.$make speedb_is_awesome_example
-4.$./speedb_is_awesome_example
+2.$cd path/to/speedb
+3.$make static_lib
+4.$cd examples
+5.$make speedb_is_awesome_example
+6.$./speedb_is_awesome_example
 ```
 
 **Code examples**
