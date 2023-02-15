@@ -17,6 +17,8 @@
     * [Report bugs and other issues](getting-started/how-to-contribute/report-bugs-and-other-issues.md)
     * [Help with new and ongoing feature development](getting-started/how-to-contribute/help-with-new-and-ongoing-feature-development.md)
 * [Speedb Features](speedb-features/README.md)
+  * [Live Configuration Changes](speedb-features/live-configuration-changes.md)
+  * [Page 1](speedb-features/page-1.md)
   * [Dynamic Delayed Writes](speedb-features/dynamic-delayed-writes.md)
   * [Proactive Flushing](speedb-features/proactive-flushing.md)
   * [Reduce switch memtable latency](speedb-features/reduce-switch-memtable-latency.md)
