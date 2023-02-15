@@ -1,4 +1,4 @@
-# Page 1
+# Report Index Size per Column Family
 
 ## Overview&#x20;
 
