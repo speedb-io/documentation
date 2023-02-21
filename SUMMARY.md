@@ -1,6 +1,7 @@
 # Table of contents
 
 * [About](README.md)
+  * [Speedb Use Cases](readme/speedb-use-cases.md)
   * [Speedb Communication Channels](readme/speedb-communication-channels.md)
   * [Release Cadence](readme/release-cadence.md)
 * [Getting started](getting-started/README.md)
