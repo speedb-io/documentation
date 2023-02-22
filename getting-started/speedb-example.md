@@ -1,20 +1,39 @@
 # Speedb Example
 
 ```
-1.$git clone speedb
-2.$cd path/to/speedb
-3.$make static_lib
-4.$cd examples
-5.$make speedb_is_awesome_example
-6.$./speedb_is_awesome_example
+git clone https://github.com/speedb-io/speedb
+cd speedb
+make static_lib
+cd examples
+make speedb_is_awesome_example
+./speedb_is_awesome_example
 ```
 
 **Code examples**
 
-Full example can be found under speedb/examples/speedb\_is\_awesome\_example.ccp
+Full example can be found under https://github.com/speedb-io/speedb/blob/main/examples/speedb_is_awesome_example.cc
 
 ```cpp
-// Open the storage 
+#include <iostream>
+
+#include "rocksdb/db.h"
+#include "rocksdb/options.h"
+
+using namespace ROCKSDB_NAMESPACE;
+
+#if defined(OS_WIN)
+std::string kDBPath = "C:\\Windows\\TEMP\\speedb_is_awesome_example";
+#else
+std::string kDBPath = "/tmp/speedb_is_awesome_example";
+#endif
+```
+
+```cpp
+// Open the storage
+DB* db = nullptr;
+Options options;
+// create the DB if it's not already present
+options.create_if_missing = true;
 DB::Open(options, "/speedb", &db);     
 ```
 
@@ -27,7 +46,8 @@ db->Put(WriteOptions(), key, val);
 
 ```cpp
 // retrieve entry 
-std::string value; db->Get(ReadOptions(), "key", &value);    
+std::string value; 
+db->Get(ReadOptions(), "key", &value);    
 ```
 
 ```cpp

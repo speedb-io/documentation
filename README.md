@@ -10,4 +10,4 @@ Speedb docs is managed in the "[documentation](https://github.com/speedb-io/docu
 
 You can contribute by enhancing, fixing issues, and adding new content, by using issues, and pull requests.
 
-\
+
