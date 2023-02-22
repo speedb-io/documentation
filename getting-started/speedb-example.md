@@ -2,7 +2,7 @@
 
 ```
 git clone https://github.com/speedb-io/speedb
-cd path/to/speedb
+cd speedb
 make static_lib
 cd examples
 make speedb_is_awesome_example
