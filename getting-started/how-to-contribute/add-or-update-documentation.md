@@ -6,4 +6,4 @@ All documentation is written for clarity and readability. Beyond fixing spelling
 
 Typos or other minor fixes that don't change the meaning of a document don't need a formal review, and can be handled directly as a pull request.
 
-&#x20;[Speedb book Repository ](https://github.com/speedb-io/book)
+&#x20;[Speedb documentation Repository ](https://github.com/speedb-io/book)
