@@ -1,6 +1,6 @@
 # Getting started
 
-The following section covers hoe to get using Speedb:
+The following section covers how to get using Speedb:
 
 * [Speedb example: ](speedb-example.md)the fastest way to get Speedb up and running
 * [How to compile Speedb](how-to-compile-speedb.md)[ from source](how-to-compile-speedb.md)
