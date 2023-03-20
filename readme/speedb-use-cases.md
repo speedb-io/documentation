@@ -1,3 +1,7 @@
+---
+description: Speedb common use cases
+---
+
 # Speedb Use Cases
 
 Speedb is an embedded key-value store that stores data as key-value pairs and is designed to be embedded in applications. Speedb is commonly used in a variety of applications where low latency and high performance are important, such as in web browsers, streaming applications and mobile apps.
