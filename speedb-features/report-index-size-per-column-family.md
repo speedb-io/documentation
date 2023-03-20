@@ -1,3 +1,9 @@
+---
+description: >-
+  This document describes the new index size reporting per column family
+  introduced in Speedb 2.3.0.
+---
+
 # Report Index Size per Column Family
 
 ## Overview&#x20;

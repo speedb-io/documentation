@@ -1,3 +1,9 @@
+---
+description: >-
+  This document describes the proactive flushing mechanism introduced in Speedb
+  v 2.2.0
+---
+
 # Proactive Flushing
 
 ## Overview

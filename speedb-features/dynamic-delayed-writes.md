@@ -1,3 +1,9 @@
+---
+description: >-
+  The purpose of this document is to describe how Speedb v2.2.0 has achieved
+  performance stabilization with its dynamic delayed write mechanism
+---
+
 # Dynamic Delayed Writes
 
 ## Overview

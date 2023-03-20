@@ -1,3 +1,9 @@
+---
+description: >-
+  Speedb introduced new memtable type that improves seek and read while write
+  performance
+---
+
 # Sorted Hash Memtable
 
 ### Overview
