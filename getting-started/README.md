@@ -7,7 +7,7 @@ The following section covers how to get using Speedb:
 * [Use prebuilt binaries ](install.md)
 * [Drop-in replacement for Rocksdb:](drop-in-replacement.md) for existing rocksdb users that would like to start using Speedb with minimum steps&#x20;
 
-### ****
+###
 
 Questions? Please feel free to contact us via [GitHub](https://github.com/speedb-io/speedb/discussions) or [Discord](https://discord.gg/52yzKZ5G9D).
 

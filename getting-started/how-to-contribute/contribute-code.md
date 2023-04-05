@@ -185,7 +185,7 @@ Commit messages should:
 
 * Start with a component name followed by a colon. For example, if you made changes to the documentation, prefix the commit message with `docs:` \
   If you only updated tests, prefix the commit message with `tests:`\
-  ``For build-related changed use `build:` , etc.
+  For build-related changed use `build:` , etc.
 * Reference a relevant issue, if any. This is especially relevant for bug fixes and new features. The issue should be referenced at the end of the first line as a hash sign followed by the issue number. For example, `#23`.
 * Have the line length limited to 100 characters or less. This restriction does not apply when quoting program output, etc.
 * Please use clear and grammatically-correct language, and use present tense ("add feature", not "added feature".)

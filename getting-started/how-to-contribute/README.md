@@ -18,7 +18,7 @@ There are several ways to contribute to Speedb:
 * [Add or update documentation](add-or-update-documentation.md)
 * [Report bugs and other issues](report-bugs-and-other-issues.md)
 * [Help with new and ongoing feature development](help-with-new-and-ongoing-feature-development.md)
-* [Check out a Pull Request](broken-reference) ****&#x20;
+* [Check out a Pull Request](broken-reference) &#x20;
 
 All documents and pull requests must be consistent with the guidelines and follow the Speedb documentation and coding styles.
 

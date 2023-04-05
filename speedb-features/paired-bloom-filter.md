@@ -40,9 +40,9 @@ The current Paired Bloom Filter is suitable when all files contain a sufficient 
 
 ### **Standard Bloom Filter**
 
-The standard bloom filter is used to check whether a certain key belongs to a predefined group of _**keys**  **S**_ of size _**n**_.&#x20;
+The standard bloom filter is used to check whether a certain key belongs to a predefined group of _**keys**_ _**S**_ of size _**n**_.&#x20;
 
-The standard bloom filter is a vector of ** **_**m**_**  **_**bits**_ (denoted here as _**V**_), which are initially set to zero.&#x20;
+The standard bloom filter is a vector of _**m**_ _**bits**_ (denoted here as _**V**_), which are initially set to zero.&#x20;
 
 Insertion of _key **e**_ in is done by mapping the key to _**k**_ locations in the bloom filter using _k_ independent hash functions (h\__1 (e),...h\__k(e) ).&#x20;
 
@@ -73,9 +73,9 @@ In order to make the query process cache efficient, the Blocked Bloom Filter was
 
 Each block is of the size of a cache line (512 bits) and is initialized to 0.&#x20;
 
-After selecting the relevant _**** block **V\_l**_ , an element is inserted by mapping it to _**k**_ locations within the block and setting them to 1, similar to the standard bloom filter.&#x20;
+After selecting the relevant _block **V\_l**_ , an element is inserted by mapping it to _**k**_ locations within the block and setting them to 1, similar to the standard bloom filter.&#x20;
 
-To test whether an _**element**_ is in _**S**_, the element is first mapped to a block by using the hash _**** function **h\_0**_, then mapped to locations within the block using the _**k**_ independent hash functions. Finally, the bits in the corresponding locations are verified to all be 1 (similar to the standard bloom filter).&#x20;
+To test whether an _**element**_ is in _**S**_, the element is first mapped to a block by using the hash _function **h\_0**_, then mapped to locations within the block using the _**k**_ independent hash functions. Finally, the bits in the corresponding locations are verified to all be 1 (similar to the standard bloom filter).&#x20;
 
 The blocked bloom filter produces 1 cache miss for both negative and positive keys. However, the FPR of the blocked bloom filter is substantially worse than the FPR of the standard bloom filter for large bits-per-key rates (typically larger than 20).&#x20;
 
@@ -194,8 +194,8 @@ Return POSITIVE
 #### Results (#Hash Functions=16, bits-per-key=23.2-23.4):
 
 **The algorithm was implemented in 4 environments:** \
-****1. Simulation\
-****2. Clean CPP code\
+1\. Simulation\
+2\. Clean CPP code\
 3\. Speedb POC: New filter type as part of the Speedb repo\
 4\. RocksDB 7 / OSS repo POC&#x20;
 
