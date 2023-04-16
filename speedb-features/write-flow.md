@@ -6,7 +6,7 @@ description: This feature is experimental in v2.4.0
 
 ## Introduction:
 
-The SPDB Write Flow is a new approach to writing data in RocksDB that aims to reduce the amount of time spent holding global database mutexes and increase the level of parallelism for IO writes. This new approach is implemented in a dedicated SPDB write thread, which handles the memtable switch, flush requests, WAL switch, WBM threshold limit, write delay, and WAL trim.
+The SPDB Write Flow introduces a significant improvement in the performance of data writing in RocksDB. The SPDB Write Flow is a new approach to writing data in RocksDB that aims to reduce the amount of time spent holding global database mutexes and increase the level of parallelism for IO writes. This new approach is implemented in a dedicated SPDB write thread, which handles the memtable switch, flush requests, WAL switch, WBM threshold limit, write delay, and WAL trim.
 
 ## Background:
 
@@ -43,6 +43,6 @@ This was tested with db\_bench, using the configuration below:&#x20;
 The graph illustrates the dramatic increase in writing performance when using small objects: \
 
 
-![](https://lh5.googleusercontent.com/ueDtl8husENo6aP-f4MLuELq48\_spP5LFDKTPCW\_Le139UWPOunhgyh5a12kKKdY1M\_TJ\_-D5jyKjZMkWgd3liekIaoxAcHARARArbycwRE9K5CH\_OlVsETPsJzWyL92aD0PejywzvCMRo8O7xkVlHA)
+<figure><img src="../.gitbook/assets/_                                                    readrandomwriterandom_90.png" alt=""><figcaption></figcaption></figure>
 
 \

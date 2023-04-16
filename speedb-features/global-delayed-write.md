@@ -2,6 +2,7 @@
 
 ## Overview
 
+The usability and management of multiple databases can be significantly improved with the implementation of the Global Delayed Write feature. \
 The Global delayed write feature is designed to address a problem where users running multiple databases on the same disk can experience disk bandwidth starvation, leading to uneven resource distribution. This feature converts the WriteController from a per-database object into a shared object that can record and enforce the live delay requirements of all the databases that are connected to it. In this document, we'll explain the problem, the solution, and how to use the global delayed write feature.
 
 This feature was introduced with Speedb open source version 2.4.0.&#x20;
@@ -58,8 +59,10 @@ The graph shows that with the new global delayed write enabled the results are m
 
 Without the global delayed write, there are many stalls observed during the test while with the feature enabled there were no stalls.&#x20;
 
+<figure><img src="../.gitbook/assets/_                                                                                                                                                     fillrandom.png" alt=""><figcaption></figcaption></figure>
+
 \
-<img src="../.gitbook/assets/Screen Shot 2023-04-05 at 23.49.25.png" alt="" data-size="original">\
+\
 \
 
 

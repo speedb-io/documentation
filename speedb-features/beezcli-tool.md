@@ -16,7 +16,7 @@ Some examples are listed below. For more information, please consult the help me
 How to use it?
 --------------
 
-The beezcli tool is available under the tools directory in Speedb repository.&#x20;
+The beezcli tool is available under the [tools](https://github.com/speedb-io/speedb/tree/main/tools) directory in Speedb repository.&#x20;
 
 By default, \`beezcli\` can only be used against a DB that is offline. Operating the DB, even for read-only operations, might make changes to the DB directory, e.g. info logs.
 
