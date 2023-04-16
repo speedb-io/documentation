@@ -1,3 +1,9 @@
+---
+description: >-
+  This feature improves write stabilization in multiple databases/CFs
+  environment.
+---
+
 # Global Delayed write
 
 ## Overview

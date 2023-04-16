@@ -1,5 +1,7 @@
 ---
-description: This document described how Speedb Improved Paired bloom filter algorithm
+description: >-
+  This document described how Speedb improved memory consumption while keeping
+  the same false positive rate.
 ---
 
 # Paired Bloom Filter
