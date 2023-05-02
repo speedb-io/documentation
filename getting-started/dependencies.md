@@ -125,4 +125,4 @@ If you want to build a portable binary, add `PORTABLE=1` before your make comman
 
 ### **Windows** (Visual Studio 2017 to up)
 
-* Read and follow the instructions at CMakeLists.txt
+* Read and follow the instructions at [CMakeLists.txt](https://github.com/speedb-io/speedb/blob/main/CMakeLists.txt)

@@ -5,7 +5,7 @@
   * [Speedb Communication Channels](readme/speedb-communication-channels.md)
   * [Release Cadence](readme/release-cadence.md)
 * [Getting started](getting-started/README.md)
-  * [Speedb Example](getting-started/speedb-example.md)
+  * [Speedb Quick Start Example](getting-started/speedb-example.md)
   * [Dependencies](getting-started/dependencies.md)
   * [How to Compile Speedb](getting-started/how-to-compile-speedb.md)
   * [Drop-in Replacement](getting-started/drop-in-replacement.md)

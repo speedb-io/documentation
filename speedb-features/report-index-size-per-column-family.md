@@ -14,7 +14,7 @@ Speedb v2.3.0 adds granularity to the log by adding prints of the block cache br
 
 ## Motivation&#x20;
 
-A clear understanding of the size of the index and filter held in the cache per column family can assist in re-configuring a system if the LRU cache runs out of memory. When identifying the cf with large index size, it is possible to change the block size, change the key size or the pinning configuration of this cf in order to mitigate the issue.&#x20;
+A clear understanding of the size of the index and filter held in the cache per column family can assist in re-configuring a system if the LRU cache runs out of memory. When identifying the column family with large index size, it is possible to change the block size, change the key size or the pinning configuration of this column family in order to mitigate the issue.&#x20;
 
 ## Technical details&#x20;
 

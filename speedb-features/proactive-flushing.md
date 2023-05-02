@@ -42,6 +42,37 @@ Proactive flushing is an optional new feature, introduced in release 2.2.1. Once
 
 The feature is enabled by default. To disable it, set the initiate\_flushes parameter to false when creating the WBM.&#x20;
 
+
+
+The following example creates a write buffer manager with proactive flushes enabled, with a maximum number of parallel flushes == 3
+
+```cpp
+size_t buffer_size = 1 << 30U;
+std::shared_ptr<Cache> cache = ...;
+bool initiate_flushes = true;
+FlushInitiationOptions flush_initiation_options;
+flush_initiation_options.max_num_parallel_flushes = 3U;
+  
+Options options;
+
+// Options initialization code
+  .
+  .
+  .
+
+options.write_buffer_manager.reset(new WriteBufferManager(buffer_size,
+                                                            cache,
+                                                            allow_wbm_stalls,
+                                                            initiate_wbm_flushes,
+                                                            flush_initiation_options));
+
+  .
+  .
+  .
+
+// Open the database using options
+```
+
 ### Registration with the WBM
 
 In order for the WBM to initiate flushes, every DB will register with its WBM a callback function which the WBM may use to request the DB to initiate a flush.
@@ -52,11 +83,11 @@ The WBM will now track the number of flushes that are running simultaneously acr
 
 ### Adapting the number of flushes
 
-When using proactive flushing, the user sets a maximum number of flushes that may run simultaneously in all of the WBM’s databases together. The WBM attempts to maintain a number of simultaneous flushes that correspond to the percentage of used memory out of its quota, up to the maximum configured number.&#x20;
+When using proactive flushing, the user sets a maximum number of flushes that may run simultaneously in all of the WBM’s databases together as demonstrated in the example above. The WBM attempts to maintain a number of simultaneous flushes that correspond to the percentage of used memory out of its quota, up to the maximum configured number.&#x20;
 
 ### Initiating a flush
 
-The WBM has a new internal thread that will wake up whenever it needs to initiate new flushes. The thread will iterate over its DB-s, requesting each DB in turn to initiate a flush. The WBM will also specify a minimum size for the flush, to reduce the chances of generating many small level-0 files. A DB will evaluate the request and may or may not initiate a flush. It will return the result (flush initiated or not) to the WBM.
+The WBM has a new internal thread that will wake up whenever it needs to initiate new flushes. The thread will iterate over its DBs, requesting each DB in turn to initiate a flush. The WBM will also specify a minimum size for the flush, to reduce the chances of generating many small level-0 files. A DB will evaluate the request and may or may not initiate a flush. It will return the result (flush initiated or not) to the WBM.
 
 The WBM will stop requesting DB-s when one of the following occurs:
 

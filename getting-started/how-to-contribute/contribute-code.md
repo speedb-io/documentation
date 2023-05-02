@@ -28,7 +28,7 @@ Read more about the [Pull Request](submit-a-pull-request.md) process here.
 
 If you make a code-related change, be sure to add a unit test for validation.
 
-For new features, new unit tests or test scenarios must be added, even if the changes have been validated manually. This is to make ensure future contributors can rerun the tests to validate that their changes don't cause any issues.
+For new features, new unit tests or test scenarios must be added, even if the changes have been validated manually. This is to make sure future contributors can rerun the tests to validate that their changes don't cause any issues.
 
 Speedb uses [GTest](https://github.com/google/googletest) for the C++ unit tests and [JUnit](https://junit.org/) for the Java unit tests.&#x20;
 

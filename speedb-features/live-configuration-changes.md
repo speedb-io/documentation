@@ -17,15 +17,15 @@ Without the live configuration changes feature, in order to change a mutable opt
 
 ## How does it work?
 
-Live Configuration Changes works by periodically checking to see if a Speedb Options file (the refresh\_options\_file) exists and, if so, updating the Options to the values contained in the refresh\_options\_file. The frequency to check for the refresh options file is controlled by the Options.refresh\_options\_sec parameter.  If greater than zero, this parameter controls how often a background task will check if the file exists (by default, the refresh\_options\_file is checked hourly).
+Live Configuration Changes works by periodically checking to see if a Speedb Options file (the **refresh\_options\_file**) exists and, if so, updating the Options to the values contained in the refresh\_options\_file. The frequency to check for the refresh options file is controlled by the Options.refresh\_options\_sec parameter.  If greater than zero, this parameter controls how often a background task will check if the file exists (by default, the refresh\_options\_file is checked hourly).
 
 The name of the options file is specified in the Options.refresh\_options\_file parameter.  If the parameter points to an absolute path, the full path is used.  Otherwise, the path is relative to the database directory.  If no file name is set, the “Options.new” file in the database directory is checked.
 
-The refresh options file will be checked periodically (every refresh\_options\_sec seconds).  If a file is found, it is read as an OPTIONS file. The file must be a valid options file, containing at a minimum the DBOptions and ColumnFamilyOptions “default” sections (though both may be empty and contain no parameters). &#x20;
+The refresh options file will be checked periodically (every **refresh\_options\_sec** seconds).  If a file is found, it is read as an OPTIONS file. The file must be a valid options file, containing at a minimum the DBOptions and ColumnFamilyOptions “default” sections (though both may be empty and contain no parameters). &#x20;
 
 Only the parameters that you would like to be changed should be specified in the file – other parameters will retain their current value.  Only parameters that are mutable (those which can be changed via SetOptions or SetDBOptions) may be in the file; non-mutable options will cause an error to be generated. &#x20;
 
-The “table” section of the options file is ignored.  To update mutable table options, the options should be specified as “table\_factory.option = new\_value”, where “option” is the name of the option (e.g. “block\_size”) being changed.  Once processed, the refresh options file will be removed.
+The “table” section of the options file is ignored.  To update mutable table options, the options should be specified as “_table\_factory.option = new\_value_”, where “option” is the name of the option (e.g. “block\_size”) being changed.  Once processed, the refresh options file will be removed.
 
 Because the refresh options job runs in the background asynchronously, no errors are reported to the user.  The log file should be checked to see that the values were successfully read and updated.  If there are errors while performing the update, the options may be partially applied (e.g. to the DBOptions or some of the column families). &#x20;
 

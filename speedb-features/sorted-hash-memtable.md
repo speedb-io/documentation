@@ -1,14 +1,12 @@
 ---
-description: >-
-  Speedb introduced new memtable type that improves seek and read while write
-  performance
+description: A new memtable type that improves seek and read while writing performance.
 ---
 
 # Sorted Hash Memtable
 
 ### Overview
 
-There are currently 5 RocksDB memtable representation options, with the default being _**SkipList**_.&#x20;
+There are currently 5 [RocksDB memtable ](https://github.com/facebook/rocksdb/wiki/MemTable)representation options, with the default being _**SkipList**_.&#x20;
 
 We designed a new memtable representation algorithm that allows parallel writes without requiring the insertion of synchronization locks, also improving read and seek operations.\
 
@@ -19,7 +17,7 @@ This new memtable is available in version 2.0.0 and later.&#x20;
 
 The Speedb memtable combines hash and sorted vectors (which are created in background thread).
 
-The default hash size is 1,000,000 buckets, and the maximum size for each vector is 10,000 keys. (this can be tuned as part of CF creation properties).
+The default hash size is 1,000,000 buckets, and the maximum size for each vector is 10,000 keys. (this can be tuned as part of column family creation properties).
 
 The goal of the hash is to achieve direct access on read operations **(O(1))**.&#x20;
 
