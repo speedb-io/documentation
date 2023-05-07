@@ -20,7 +20,6 @@
 * [Speedb Features](speedb-features/README.md)
   * [Write Flow](speedb-features/write-flow.md)
   * [Global Delayed write](speedb-features/global-delayed-write.md)
-  * [Beezcli Tool](speedb-features/beezcli-tool.md)
   * [Live Configuration Changes](speedb-features/live-configuration-changes.md)
   * [Report Index Size per Column Family](speedb-features/report-index-size-per-column-family.md)
   * [Dynamic Delayed Writes](speedb-features/dynamic-delayed-writes.md)
@@ -30,4 +29,5 @@
   * [Paired Bloom Filter](speedb-features/paired-bloom-filter.md)
 * [Tools](tools/README.md)
   * [DB\_bench: Groups](tools/db\_bench-groups.md)
+  * [Beezcli Tool](tools/beezcli-tool.md)
 * [Performance testing](performance-testing.md)
