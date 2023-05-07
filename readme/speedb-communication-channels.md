@@ -1,8 +1,8 @@
-# Speedb communication channels
+# Speedb Communication Channels
 
 ### Speedb official website:
 
-[https://www.speedb.dev/](https://www.speedb.dev/)
+[https://www.speedb.io/](https://www.speedb.dev/)
 
 ### Discord channel&#x20;
 

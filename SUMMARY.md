@@ -29,5 +29,5 @@
   * [Paired Bloom Filter](speedb-features/paired-bloom-filter.md)
 * [Tools](tools/README.md)
   * [DB\_bench: Groups](tools/db\_bench-groups.md)
-  * [Beezcli Tool](tools/beezcli-tool.md)
+  * [Beezcli Tool](speedb-features/beezcli-tool.md)
 * [Performance testing](performance-testing.md)
