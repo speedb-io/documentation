@@ -4,6 +4,7 @@
   * [Speedb Use Cases](readme/speedb-use-cases.md)
   * [Speedb Communication Channels](readme/speedb-communication-channels.md)
   * [Release Cadence](readme/release-cadence.md)
+  * [Releases](readme/releases.md)
 * [Getting started](getting-started/README.md)
   * [Speedb Quick Start Example](getting-started/speedb-example.md)
   * [Dependencies](getting-started/dependencies.md)
