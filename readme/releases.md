@@ -123,7 +123,7 @@ Release date: 22-December-2022 | Based on RocksDB 7.7.3
 #### New Features
 
 * [Proactive flushes ](../speedb-features/proactive-flushing.md)for better resources utilization [#185](https://github.com/speedb-io/speedb/pull/185)
-* [Dynamic delayed write ](../speedb-features/dynamic-delayed-writes.md)mechanism for consistent performance [#2](https://github.com/speedb-io/speedb/pull/281)
+* [Dynamic delayed write ](../enhancements/dynamic-delayed-writes.md)mechanism for consistent performance [#2](https://github.com/speedb-io/speedb/pull/281)
 
 #### Enhancements&#x20;
 
@@ -131,7 +131,7 @@ Release date: 22-December-2022 | Based on RocksDB 7.7.3
 * [DB-bench groups support](../tools/db\_bench-groups.md): Allow running multiple benchmark, each with its own configuration [#250](https://github.com/speedb-io/speedb/pull/250)
 * db\_bench: Support '--groups' in addition to '-groups'  [#295](https://github.com/speedb-io/speedb/pull/295)
 * db\_stress enhancement: Support control over WBM's allow\_stall [#289](https://github.com/speedb-io/speedb/pull/289)
-* [Shorten latency while switch](../speedb-features/reduce-switch-memtable-latency.md) generic memtable  [#297](https://github.com/speedb-io/speedb/pull/297)
+* [Shorten latency while switch](../enhancements/reduce-switch-memtable-latency.md) generic memtable  [#297](https://github.com/speedb-io/speedb/pull/297)
 
 #### Bug Fixes
 
