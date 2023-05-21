@@ -19,7 +19,15 @@ The new SPDB Write Flow algorithm consists of a thread dedicated to handling the
 Each batch write is responsible for writing to the memtable (if needed) and waiting for the complete batch group. The batch group leader is, by default, the first one unless new batches are inserted in parallel, and the one batch group limit size is not reached. The batch leader is responsible for the merged group WAL write and writing to WAL with or without synchronization. It is important to note that WAL writes can be completed before all the container memtable writes are completed, which is okay. However, we must wait for the memetable writes to be completed to progress the version. The flow handles merge/none memtable writes/none WAL writes in the same container, allowing for a fluent flow. Still, writes to the WAL should consider that we build the merged WAL batch (seq number).
 
 \
+The table below summarize the differences between RocksDB write flow and the Speedb write flow:
 
+|                                                 | RocksDB                                                     | Speedb                                                             |
+| ----------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------ |
+| General                                         | DBmutex on every write batch                                | RW lock - write lock when needed                                   |
+| Writes to the WAL                               | Append, sync writes                                         | <p>Writing to a specific address space, parallel writes</p><p></p> |
+| Checking the triggers                           | <p>Part of the DB mutex on every write</p><p></p>           | <p>Background, write lock only when needed </p><p></p>             |
+| <p>Switch memtable/switch WAL/Trim WAL <br></p> | <p>Part of the DB mutex on every write</p><p></p>           | <p>Background, without any locks </p><p></p>                       |
+| Writes  rollback                                | <p>Don’t needed (since writing first to the WAL)</p><p></p> | <p>Needed when write to the memtable failed </p><p></p>            |
 
 ## Limitations and known issues&#x20;
 
