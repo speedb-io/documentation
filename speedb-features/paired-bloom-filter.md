@@ -361,10 +361,7 @@ As compared to the traditional bloom filter, the new Paired bloom filter showed 
 
 Memory usage decreases as the number of bits per key increases.&#x20;
 
-|                           | Paired Bloom | Local Bloom |
-| ------------------------- | ------------ | ----------- |
-| Bits per key              | 40           | 29          |
-| Total memory consumption  | 6200MB       | 7700MB      |
+<table><thead><tr><th width="273"></th><th>Paired Bloom</th><th>Local Bloom</th></tr></thead><tbody><tr><td>Bits per key</td><td>40</td><td>29</td></tr><tr><td>Total memory consumption </td><td>6200MB</td><td>7700MB</td></tr></tbody></table>
 
 This test resulted in a 23% reduction in memory consumption while keeping the same performance for random read workload.&#x20;
 
@@ -385,10 +382,7 @@ Test configuration:
 * Number of CPU cores: 8
 * Compression mode: None
 
-|                          | Paired Bloom | Local Bloom |
-| ------------------------ | ------------ | ----------- |
-| Bits per key             | 20           | 20          |
-| Total memory consumption | 4900B        | 4800MB      |
+<table><thead><tr><th width="284"></th><th>Paired Bloom</th><th>Local Bloom</th></tr></thead><tbody><tr><td>Bits per key</td><td>20</td><td>20</td></tr><tr><td>Total memory consumption</td><td>4900B</td><td>4800MB</td></tr></tbody></table>
 
 This test simulates high ratio of non-existing keys and the disk is the bottleneck. \
 The graph below demonstrate the significant improvement with random read in this type of workload.&#x20;

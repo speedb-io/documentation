@@ -33,4 +33,5 @@
 * [Tools](tools/README.md)
   * [DB\_bench: Groups](tools/db\_bench-groups.md)
   * [Beezcli Tool](speedb-features/beezcli-tool.md)
+* [RocksDB Basics](rocksdb-basics.md)
 * [Performance testing](performance-testing.md)
