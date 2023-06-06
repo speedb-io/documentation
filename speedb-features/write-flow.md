@@ -29,9 +29,19 @@ The table below summarize the differences between RocksDB write flow and the Spe
 | <p>Switch memtable/switch WAL/Trim WAL <br></p> | <p>Part of the DB mutex on every write</p><p></p>           | <p>Background, without any locks </p><p></p>                       |
 | Writes  rollback                                | <p>Don’t needed (since writing first to the WAL)</p><p></p> | <p>Needed when write to the memtable failed </p><p></p>            |
 
+To summaries, the new write flow enables parallel writes by the following changes:
+
+1. In the current write flow, the DBmutex is global for the entire database. With Speedb write flow the db mutex is split to wal mutex and other operations. So every write to the WAL is not not holding the entire db mutex. Other internal operations can run in parallel to writing to the WAL.
+2. Speedb write flow allows parallel writes to the memtable and the WAL. Ack is sent only after the data is written to both, but the writes are no longer serial.&#x20;
+3. The wall in the previous write flow is using append, meaning only single write is allowed at a time. Speedb's new write flow changed the way data is written to the WAL and now writes to a specific address in the file, a fact that enables the parallel writes to the WAL.&#x20;
+
+##
+
 ## Limitations and known issues&#x20;
 
 In the 2.4 release, the write flow feature is experimental. It currently consumes slightly more memory than usual and this will be fixed in the next release.&#x20;
+
+
 
 ## Test Results&#x20;
 

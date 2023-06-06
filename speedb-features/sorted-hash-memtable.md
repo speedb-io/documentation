@@ -17,9 +17,9 @@ This new memtable is available in version 2.0.0 and later.&#x20;
 
 The Speedb memtable combines hash and sorted vectors (which are created in background thread).
 
-The default hash size is 1,000,000 buckets, and the maximum size for each vector is 10,000 keys. (this can be tuned as part of column family creation properties).
+The default hash size is 1 Million buckets, and the maximum size for each vector is 10K keys. (this can be tuned as part of column family creation properties).
 
-The goal of the hash is to achieve direct access on read operations **(O(1))**.&#x20;
+The goal of the hash is to achieve direct access on read and write operations **(O(1))**.&#x20;
 
 The goal of the sorted vector is to improve seek operations, taking into consideration that writes are still progressing.&#x20;
 
@@ -29,7 +29,7 @@ A new write is added to the hash and atomic write list.
 
 #### **Hash insertion:**
 
-Since the default hash size is 1,000,000 buckets, the possibility of more than 1 write on the same bucket is reduced (not including an overwrite operation). This gives us direct access without synchronization.
+Since the default hash size is 1 Million buckets, the possibility of more than 1 write on the same bucket is reduced (not including an overwrite operation). This gives us direct access without synchronization.
 
 #### Write list insertion:
 
