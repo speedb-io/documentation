@@ -31,7 +31,7 @@ The table below summarize the differences between RocksDB write flow and the Spe
 
 To summaries, the new write flow enables parallel writes by the following changes:
 
-1. In the current write flow, the DBmutex is global for the entire database. With Speedb write flow the db mutex is split to wal mutex and other operations. So every write to the WAL is not not holding the entire db mutex. Other internal operations can run in parallel to writing to the WAL.
+1. Speedb changed the DB mutex to read/write-lock
 2. Speedb write flow allows parallel writes to the memtable and the WAL. Ack is sent only after the data is written to both, but the writes are no longer serial.&#x20;
 3. The wall in the previous write flow is using append, meaning only single write is allowed at a time. Speedb's new write flow changed the way data is written to the WAL and now writes to a specific address in the file, a fact that enables the parallel writes to the WAL.&#x20;
 
