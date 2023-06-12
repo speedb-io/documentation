@@ -6,7 +6,7 @@ description: This feature is experimental in v2.4.0
 
 ## Introduction:
 
-The SPDB Write Flow introduces a significant improvement in the performance of data writing in RocksDB. The SPDB Write Flow is a new approach to writing data in RocksDB that aims to reduce the amount of time spent holding global database mutexes and increase the level of parallelism for IO writes. This new approach is implemented in a dedicated SPDB write thread, which handles the memtable switch, flush requests, WAL switch, WBM threshold limit, write delay, and WAL trim.
+The SPDB Write Flow introduces a significant improvement in the performance of data writing in RocksDB. The SPDB Write Flow is a new approach to writing data in RocksDB that aims to reduce the amount of time spent holding global database mutexes and increase the level of parallelism for IO writes. This new approach is implemented in a dedicated SPDB write thread, which handles the memtable switch, flush requests, WAL (Write Ahead Log) switch, WBM threshold limit, write delay, and WAL trim.
 
 ## Background:
 
@@ -35,7 +35,59 @@ To summaries, the new write flow enables parallel writes by the following change
 2. Speedb write flow allows parallel writes to the memtable and the WAL. Ack is sent only after the data is written to both, but the writes are no longer serial.&#x20;
 3. The wall in the previous write flow is using append, meaning only single write is allowed at a time. Speedb's new write flow changed the way data is written to the WAL and now writes to a specific address in the file, a fact that enables the parallel writes to the WAL.&#x20;
 
-##
+### Transactions
+
+RocksDB supports both optimistic and pessimistic concurrency controls. The pessimistic transactions make use of locks to provide isolation between the transactions. The default write policy in pessimistic transactions is WriteCommitted, which means that the data is written to the DB, i.e., the memtable, only after the transaction is committed. This policy simplified the implementation but came with some limitations in throughput, transaction size, and variety in supported isolation levels.&#x20;
+
+This approach actually doesn't require any special treatment in the new spdb write flow since the txn (transaction) batches are kept in memory and are written to the WAL/memtable only as part of commit.
+
+What is interesting for us is the WritePrepared and WriteUnprepared
+
+In this propose we actually have for each txn:
+
+**Prepare**
+
+**Txn Writes**
+
+**Commit**
+
+
+
+In the prepare phase we write only a wal write that gets a seq as all batch writes does but this id is the identify of the txn
+
+Any txn writes will be attached to this txn id.
+
+The write flow will consist of a txn data structure that keeps track of the uncomplete txn.
+
+The Txn write batches will be inserted to the memtable as the regular batch writes (can be with initial  txn id to all writes or increments one - if the second option this seq should be kept in the incomplete txn data)
+
+And will be updated in the wal.&#x20;
+
+The version seq will be update as well.&#x20;
+
+Any read from the txn will try find first in the txn data and then from the memtable and  levels .
+
+New regular writes will proceed with no effect
+
+Read from the db and not txn read will skip incomplete txn writes, by checking if the memtable read result is part of the txn WF data.
+
+When txn is complete a commit write executed and the relevant txn id is being removed from the txn WF data and the txn data is part of the DB and is accessible  to all.
+
+
+
+This approach is simplify the rollback since any read will ignore the txn data,&#x20;
+
+Memtable switch will be made ONLY when no open txn. As part of flush, if we have failed txn , the data is ignored and not part of the SST.
+
+\
+
+
+### Error handling
+
+Because we wrote to memtable while writing to the wal, we might fail on part of the memtable writes/wal write, but the memtable already consists of the write. In such case, as like txn pending data, we keep a failed sequence, and will be ignored when read/flush.
+
+\
+
 
 ## Limitations and known issues&#x20;
 
