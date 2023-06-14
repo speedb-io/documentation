@@ -28,6 +28,7 @@
   * [Sorted Hash Memtable](speedb-features/sorted-hash-memtable.md)
   * [Paired Bloom Filter](speedb-features/paired-bloom-filter.md)
 * [➕ Enhancements](enhancements/README.md)
+  * [Remove single delete elements during memtable flush](enhancements/remove-single-delete-elements-during-memtable-flush.md)
   * [Dynamic Delayed Writes](enhancements/dynamic-delayed-writes.md)
   * [Reduce switch memtable latency](enhancements/reduce-switch-memtable-latency.md)
 * [🛠 Tools](tools/README.md)
