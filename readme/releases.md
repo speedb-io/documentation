@@ -10,6 +10,45 @@ This page summarize information about new features, bugs fixes and enhancements 
 
 <details>
 
+<summary>v2.5.0</summary>
+
+Release date: 14-June-2023 | Based on RocksDB 8.1.1
+
+### New Features
+
+* Dirty memory: connect wbm to global delay : Delay writes gradually based on memory usage of the WriteBufferManager (WBM) in order to gain stability. To use this feature, pass allow\_stall = true to the ctor of WBM and the db needs to be opened with options.use\_dynamic\_delay = true. by [@Yuval-Ariel](https://github.com/Yuval-Ariel) in [#423](https://github.com/speedb-io/speedb/pull/423)
+* [Prevent flush entry followed delete operations currently during memtable flush](../enhancements/remove-single-delete-elements-during-memtable-flush.md) , if the key has a match key in the delete range table and this record has no snapshot related to it, we still write it with its value to the SST file. This feature keeps only the delete record and reduces SST size for later compaction. by [@ayulas](https://github.com/ayulas) in [#418](https://github.com/speedb-io/speedb/pull/418) ([#411](https://github.com/speedb-io/speedb/issues/411))
+
+### Enhancements
+
+* Log: Add the CF name and job ID to all compaction job traces by [@udi-speedb](https://github.com/udi-speedb) in [#511](https://github.com/speedb-io/speedb/pull/511)
+* Log: Display cf names in rolled logs with their options by [@udi-speedb](https://github.com/udi-speedb) in [#518](https://github.com/speedb-io/speedb/pull/518)
+* Log: Report the name of cf-s whose options are skipped in the log by [@udi-speedb](https://github.com/udi-speedb) in [#520](https://github.com/speedb-io/speedb/issues/520)
+* db\_stress: Add cost\_write\_buffer\_to\_cache flag by [@udi-speedb](https://github.com/udi-speedb) in [#513](https://github.com/speedb-io/speedb/pull/513)
+
+### Bug Fixes
+
+* Fixed sorted hash memtable use after free bug by [@ayulas](https://github.com/ayulas) in [#553](https://github.com/speedb-io/speedb/pull/553) [#501](https://github.com/speedb-io/speedb/issues/501)
+* Sanitize max\_num\_parallel\_flushes in WBM if 0 by [@udi-speedb](https://github.com/udi-speedb) in [#515](https://github.com/speedb-io/speedb/pull/515)
+* WriteController: fix for stop while shutting down. Also switch to waiting a sec on the CV each time. This is required since a bg error \* doesn't signal the CV in the WriteController. by [@Yuval-Ariel](https://github.com/Yuval-Ariel) in [#499](https://github.com/speedb-io/speedb/pull/499)
+* Fixed UnlockWALStallCleared test in utilities/transactions/transaction\_test.cc by [@Yuval-Ariel](https://github.com/Yuval-Ariel) in [#514](https://github.com/speedb-io/speedb/pull/514)
+* Always assume optimize\_filters\_for\_memory=false when creating a paired bloom filter by [@udi-speedb](https://github.com/udi-speedb) in [#528](https://github.com/speedb-io/speedb/pull/528)
+* db\_bench and stress: fixed WBM initiation by [@udi-speedb](https://github.com/udi-speedb) in [#510](https://github.com/speedb-io/speedb/pull/510)
+* db\_bench: Create a WBM once for all db-s regardless of their use in different groups by [@udi-speedb](https://github.com/udi-speedb) in [#551](https://github.com/speedb-io/speedb/pull/551)
+* Fixed Tombstone test failure as a result of not clear local variable by [@ayulas](https://github.com/ayulas) in [#561](https://github.com/speedb-io/speedb/pull/561)
+* Makefile: Remove pycache artifacts after running gtest-parallel [#495](https://github.com/speedb-io/speedb/pull/495)
+* AVX512: fix disabling other optimizations by [@Yuval-Ariel](https://github.com/Yuval-Ariel) in [#489](https://github.com/speedb-io/speedb/pull/489) [#489](https://github.com/speedb-io/speedb/pull/489)
+
+### Miscellaneous
+
+* Print optimize\_filters\_for\_memory option to the log by [@udi-speedb](https://github.com/udi-speedb) in [#537](https://github.com/speedb-io/speedb/pull/537)
+
+**Full Changelog**: [https://github.com/speedb-io/speedb/commits/speedb/v2.5.0](https://github.com/speedb-io/speedb/commits/speedb/v2.5.0)
+
+</details>
+
+<details>
+
 <summary>v2.4.1</summary>
 
 Release date: 19-April-2023 | Based on RocksDB 7.7.8
