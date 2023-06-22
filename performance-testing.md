@@ -1,4 +1,4 @@
-# Performance testing
+# 📈 Performance testing
 
 We run performance tests for several reasons:
 

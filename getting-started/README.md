@@ -1,4 +1,4 @@
-# Getting started
+# 💻 Getting started
 
 The following section covers how to get using Speedb:
 

@@ -2,7 +2,7 @@
 description: Welcome to Speedb
 ---
 
-# About
+# 👋 About
 
 <figure><img src=".gitbook/assets/OSS-logo.svg" alt=""><figcaption></figcaption></figure>
 

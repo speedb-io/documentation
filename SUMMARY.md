@@ -32,6 +32,7 @@
   * [Dynamic Delayed Writes](enhancements/dynamic-delayed-writes.md)
   * [Reduce switch memtable latency](enhancements/reduce-switch-memtable-latency.md)
 * [🛠 Tools](tools/README.md)
+  * [Log Parser](tools/log-parser.md)
   * [DB\_bench: Groups](tools/db\_bench-groups.md)
   * [Beezcli Tool](speedb-features/beezcli-tool.md)
 * [🔦 RocksDB Basics](rocksdb-basics.md)

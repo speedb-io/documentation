@@ -2,7 +2,7 @@
 description: A high-level overview of RocksDB objects and operations
 ---
 
-# RocksDB Basics
+# 🔦 RocksDB Basics
 
 [RocksDB Overview](rocksdb-basics.md#rocksdb-overview)\
 [LSM](rocksdb-basics.md#log-structure-merge-lsm)\
