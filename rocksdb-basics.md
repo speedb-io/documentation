@@ -80,7 +80,7 @@ This isn’t great for read performance, especially as SST files accumulate
 
 Because each SST file is immutable and we cannot just punch holes in existing SST files, to support key deletion, LSM stores employ a technique called tomb-stoning
 
-A tombstone is a special record which only contains a key (without value) indicating that the key is deleted
+A tombstone is a special record that only contains a key (without value) indicating that the key is deleted
 
 A tombstone is said to “cover” an existing key record because a read always checks newer data first, so when a tombstone is encountered the read can complete immediately, knowing that the key was deleted
 
@@ -89,13 +89,13 @@ A tombstone is said to “cover” an existing key record because a read always 
 
 ### LSM Levels and Compaction&#x20;
 
-LSM stores data in multiple levels to enhance read performance. Since each level contains sorted runs, read operations can be efficiently performed by sequentially scanning the levels from the highest to lowest, gradually merging and retrieving the required data. This approach reduces random disk accesses and enhances overall read efficiency. (L0 to LN).
+LSM stores data in multiple levels to enhance read performance. Since each level contains sorted runs, read operations can be efficiently performed by sequentially scanning the levels from the highest to lowest, gradually merging and retrieving the required data. This approach reduces random disk access and enhances overall read efficiency. (L0 to LN).
 
-The SST files within each level aren't overlapping (except in L 0), so a get only needs to do roughly as many reads as the number of levels.
+The SST files within each level aren't overlapping (except in L 0), so a GET only needs to do roughly as many reads as the number of levels.
 
 Compaction is the process of moving data between levels in the background.
 
-The process of compaction is called that way because it chooses two or more overlapping SST files from one or more levels and combines them into a new sorted collection of key-value pairs, discarding older versions of keys and tombstoned ones (possibly creating more than a single output SST).
+The process of compaction is called that way because it chooses two or more overlapping SST files from one or more levels and combines them into a new sorted collection of key-value pairs, discarding older versions of keys and tombstoned (possibly creating more than a single output SST).
 
 
 
@@ -105,13 +105,13 @@ The process of compaction is called that way because it chooses two or more over
 
 * Space Amplification -- keeping multiple versions of the same key increases the amount of space taken by SST files
 * Write Amplification -- compacting too frequently a range of keys increases the amount of data being written to disk, harming disk endurance and eating into the disk I/O bandwidth
-* Read Amplification -- more overlapping sorted runs means more checks on every get, incurring more slow disk read I/O
+* Read Amplification -- more overlapping sorted runs means more checks on every GET, incurring more slow disk read I/O
 
 #### &#x20;Leveled compaction
 
-A compaction strategy which chooses an entire level once certain conditions are met (mostly when the level reaches its size limit), and compacts it into a lower level by choosing the overlapping files from the lower level and combining them.
+A compaction strategy chooses an entire level once certain conditions are met (mainly, when the level reaches its size limit), and compacts it into a lower level by choosing the overlapping files from the lower level and combining them.
 
-Since on L0 the SST files are just dumps of the data from the memtable, it doesn’t constitute a single sorted run and files can (and usually do) overlap, which effectively adds more “levels” that a Get request needs to check.  As a result, workloads that care about read performance should keep the amount of files in L 0 to a minimum.
+Since on L0 the SST files are just dumps of the data from the memtable, it doesn’t constitute a single sorted run and files can (and usually do) overlap, which effectively adds more “levels” that a GET request needs to check.  As a result, workloads that care about read performance should keep the number of files in L 0 to a minimum.
 
 <figure><img src=".gitbook/assets/Screen Shot 2023-06-05 at 9.30.00.png" alt="" width="231"><figcaption></figcaption></figure>
 
@@ -120,14 +120,14 @@ Since on L0 the SST files are just dumps of the data from the memtable, it doesn
 
 #### More compaction Methods
 
-* Universal Compaction (aka Tiered Compaction) -- trades read and space amplification for lower write amplification as it tries to merge only sorted runs that are of similar size and cover roughly the same key ranges (as opposed to leveled compaction which always compacts a smaller sorted run into a larger one)
+* Universal Compaction (aka Tiered Compaction) -- trades lower read and space amplifications for lower write amplification as it tries to merge only sorted runs that are of similar size and cover roughly the same key ranges (as opposed to leveled compaction which always compacts a smaller sorted run into a larger one)
 * FIFO Compaction (aka TTL compaction) -- discards whole SST files as their age exceeds a set threshold (useful for time-series data, for example)
 
 ### General block-based SST structure
 
 The data on the SST is divided into logical blocks.
 
-A block is just a single read and write unit, not defined by a hard size limit.
+A block is just a single read-and-write unit, not defined by a hard size limit.
 
 There are many block types, but these are the most relevant:
 
