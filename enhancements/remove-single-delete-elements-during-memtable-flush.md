@@ -4,11 +4,17 @@ description: >-
   https://github.com/speedb-io/speedb/issues/363
 ---
 
-# Remove single delete elements during memtable flush
+# Range Delete Improvement
 
 ## Introduction:
 
-The "Remove Single Delete Elements During Memtable Flush" feature aims to reduce the resources consumed during the flush process of immutable memory tables. Specifically, this feature avoids writing value key records to the SST file if they have a corresponding match tombstone record and are not part of any existing snapshot. By skipping these records, we can reduce the size of the SST file and minimize the workload for future compaction.
+This feature improves the Range Delete and not flushing the deleted element to the SST. It only  keeps the deleted record and reduces SST size for later compaction.
+
+
+
+The Range Delete improvement aims to reduce the resources consumed during the flush process of immutable memory tables. Specifically, this feature avoids writing value key records to the SST file if they have a corresponding match tombstone record and are not part of any existing snapshot. By skipping these records, we can reduce the size of the SST file and minimize the workload for future compaction.
+
+In the old implementation, when flushing the memtable, if a key matches a key in the delete range table and there are no associated snapshots for that record, the key is still written to the SST file along with its value.
 
 
 
